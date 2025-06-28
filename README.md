@@ -30,7 +30,7 @@ This repository implements the **DRANet** model for image denoising using deep c
 ## Datasets Used
 
 - **Training set**: [CBSD68 Dataset](https://github.com/clausmichele/CBSD68-dataset)  
-  (You need to download it and set `root_dir` to the training folder path)
+  (You need to download it, and load the CBSD68 folder into the Data -> Train)
 
 - **Test set**: Random images from the internet or user-provided samples.
 
@@ -41,6 +41,7 @@ This repository implements the **DRANet** model for image denoising using deep c
 ### **Step 1: Load Dataset**
 - Set the variable `root_dir` to point to the folder containing training images.
 - Optionally: train the DRANet model or load a pre-trained one.
+
 
 ### **Step 2: Add Gaussian Noise to Clean Images**
 - Apply noise with levels `sigma=15`, `25`, `50`, etc. to clean images.

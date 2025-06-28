@@ -39,13 +39,15 @@ This repository implements the **DRANet** model for image denoising using deep c
 ## How to Use (in `Run.ipynb`)
 
 ### **Step 1: Load Dataset**
-- Set the variable `root_dir` to point to the folder containing training images.
+- Set the variable `root_dir`.
 - Optionally: train the DRANet model or load a pre-trained one.
 
 
 ### **Step 2: Add Gaussian Noise to Clean Images**
-- Apply noise with levels `sigma=15`, `25`, `50`, etc. to clean images.
-- You can skip this step if noisy images are already available.
+- Apply Gaussian noise with level `sigma=25` to the clean images.
+- You must match the training noise level. For example, if the model was trained on `sigma=25`, test images should use the same or lower noise level.
+- You can skip this step if noisy images with the correct noise level are already available.
+- Important: DRANet was trained on a fixed noise level `(sigma=25)`. Using a higher level during testing `(e.g. sigma=50)` may lead to poor results.
 
 ### **Step 3: Run Testing**
 - **Option 1**: Denoise all images in a folder (via `makefile.ipynb`)
